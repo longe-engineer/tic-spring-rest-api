@@ -51,3 +51,5 @@
 *.vscode
 
 *cached-antora-playbook.yml
+
+*.gitignore
