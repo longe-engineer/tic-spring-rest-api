@@ -15,6 +15,5 @@
   
 
 ## 本日の資料
-- [GoogleDrive](https://drive.google.com/drive/folders/1mA8OSOQ17NaTYpXzLGIdampdnfePvnn)
 - [問題集](https://github.com/shuya-suzuki-desu/tic-spring-rest-api/issues)
 - [swagger editor](https://editor.swagger.io/)
