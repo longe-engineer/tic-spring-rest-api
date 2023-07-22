@@ -53,3 +53,4 @@
 *cached-antora-playbook.yml
 
 *.gitignore
+*.factorypath
