@@ -15,5 +15,6 @@
   
 
 ## 本日の資料
+- [Googleスライド](https://docs.google.com/presentation/d/1X7nhKsFRaI2Cfe3MxUZO-wNt4OwNlVepsCQCxt0Cp68/edit?usp=drive_link)
 - [問題集](https://github.com/shuya-suzuki-desu/tic-spring-rest-api/issues)
 - [swagger editor](https://editor.swagger.io/)
