@@ -44,4 +44,12 @@ public class HistoryCSVLogic {
         beanToCsv.write(histories);
         writer.close();
     }
+
+	public List<History> getHistory(long rowNum) throws Exception {
+		List<History> history = new CsvToBeanBuilder<History>(new CSVReader(new FileReader(new File(CSV_PATH))))
+        .withType(History.class).build().parse();
+		if (history.size() < rowNum) return history;
+		history.removeAll(history.subList(0, (int)(history.size() - rowNum)));
+		return history;
+	}
 }

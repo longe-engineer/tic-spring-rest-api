@@ -1,7 +1,11 @@
 package com.tic.restapi.controller;
 
+import java.util.List;
+import java.util.Objects;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,7 +40,7 @@ public class RequestController {
 
     @PostMapping("borrow/{id}")
     public ResponseEntity<History> borrow(@PathVariable("id") long id) throws Exception {
-        if (!service.borrow(id)) {
+        if (!service.borrowBook(id)) {
             System.out.println(id + " is bad id (e.x. not to find book)");
             return ResponseEntity.badRequest().build();
         }
@@ -45,10 +49,24 @@ public class RequestController {
 
     @PostMapping("return/{id}")
     public ResponseEntity<History> returnOf(@PathVariable("id") long id) throws Exception {
-        if (!service.returnOf(id)) {
+        if (!service.returnBook(id)) {
             System.out.println(id + " is bad id (e.x. not to find book)");
             return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.ok().build();
     }
+	
+	/**
+	 * Q2の答え.<br>
+	 * 
+	 * @param rowNum
+	 * @return
+	 * @throws Exception
+	 */
+	@GetMapping("history/{rowNum}")
+	public ResponseEntity<List<History>> getHistory(@PathVariable(name = "rowNum", required = false) long rowNum) throws Exception {
+		if (Objects.isNull(rowNum)) rowNum = 5;
+		List<History> history = service.getHistory(rowNum);
+		return ResponseEntity.ok(history);
+	}
 }

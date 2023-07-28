@@ -40,8 +40,13 @@ public class Book {
     @JsonProperty("status")
     @CsvBindByName(column = "status")
     private String status = STATUS.AVAILABLE;
+    
+    /** 貸出状況確認 */
+    public boolean isAvailable() {
+    	return STATUS.AVAILABLE.equals(status);
+    }
 
-    /** ステータスの変更. */
+    /** 貸出状況の変更. */
     public boolean changeStatus() {
         String preStatus = status;
         status = STATUS.AVAILABLE.equals(status) ? STATUS.LENDERING : STATUS.AVAILABLE;
