@@ -84,7 +84,7 @@ public class BookContoller {
 		List<Book> books = service.getAllBook();
 		// 最終的に返却するリスト
 		List<BookAggregation> bookAggregationList = service.aggregate(books);
-		
+
 		return ResponseEntity.ok(bookAggregationList);
 	}
 }

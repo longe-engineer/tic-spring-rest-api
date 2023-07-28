@@ -19,30 +19,30 @@ public interface RequestService {
 	 * @return
 	 * @throws Exception
 	 */
-    boolean buy(String bookName) throws Exception;
+	boolean buy(String bookName) throws Exception;
 
-    /**
-     * 本の貸出申請.<br>
-     * 
-     * @param id
-     * @return
-     * @throws Exception 本のステータスが貸出中の場合発生
-     */
-    boolean borrowBook(long id) throws Exception;
+	/**
+	 * 本の貸出申請.<br>
+	 * 
+	 * @param id
+	 * @return
+	 * @throws Exception 本のステータスが貸出中の場合発生
+	 */
+	boolean borrowBook(long id) throws Exception;
 
-    /**
-     * 本の返却申請.<br>
-     * @param id
-     * @return
-     * @throws Exception 本のステータスが利用可能の場合発生
-     */
-    boolean returnBook(long id) throws Exception;
-    
-    /**
-     * 申請履歴の確認.<br>
-     * @param rowNum
-     * @return
-     * @throws Exception
-     */
-    List<History> getHistory(long rowNum) throws Exception;
+	/**
+	 * 本の返却申請.<br>
+	 * @param id
+	 * @return
+	 * @throws Exception 本のステータスが利用可能の場合発生
+	 */
+	boolean returnBook(long id) throws Exception;
+
+	/**
+	 * 申請履歴の確認.<br>
+	 * @param rowNum
+	 * @return
+	 * @throws Exception
+	 */
+	List<History> getHistory(long rowNum) throws Exception;
 }

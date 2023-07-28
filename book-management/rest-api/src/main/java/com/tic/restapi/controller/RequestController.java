@@ -23,35 +23,35 @@ import com.tic.restapi.service.RequestService;
 @RequestMapping("request")
 public class RequestController {
 
-    private final RequestService service;
+	private final RequestService service;
 
-    public RequestController(RequestService service) {
-        this.service = service;
-    }
+	public RequestController(RequestService service) {
+		this.service = service;
+	}
 
-    @PostMapping("buy")
-    public ResponseEntity<History> buy(@RequestBody String bookName) throws Exception {
-        if (!service.buy(bookName)) {
-            System.out.println("An error occured with what we don't understand in detail.");
-            return ResponseEntity.badRequest().build();
-        }
-        return ResponseEntity.ok().build();
-    }
+	@PostMapping("buy")
+	public ResponseEntity<History> buy(@RequestBody String bookName) throws Exception {
+		if (!service.buy(bookName)) {
+			System.out.println("An error occured with what we don't understand in detail.");
+			return ResponseEntity.badRequest().build();
+		}
+		return ResponseEntity.ok().build();
+	}
 
-    @PostMapping("borrow/{id}")
-    public ResponseEntity<History> borrow(@PathVariable("id") long id) throws Exception {
-        if (!service.borrowBook(id)) {
-            System.out.println(id + " is bad id (e.x. not to find book)");
-            return ResponseEntity.badRequest().build();
-        }
-        return ResponseEntity.ok().build();
-    }
+	@PostMapping("borrow/{id}")
+	public ResponseEntity<History> borrow(@PathVariable("id") long id) throws Exception {
+		if (!service.borrowBook(id)) {
+			System.out.println(id + " is bad id (e.x. not to find book)");
+			return ResponseEntity.badRequest().build();
+		}
+		return ResponseEntity.ok().build();
+	}
 
-    @PostMapping("return/{id}")
-    public ResponseEntity<History> returnOf(@PathVariable("id") long id) throws Exception {
-        if (!service.returnBook(id)) {
-            System.out.println(id + " is bad id (e.x. not to find book)");
-            return ResponseEntity.badRequest().build();
+	@PostMapping("return/{id}")
+	public ResponseEntity<History> returnOf(@PathVariable("id") long id) throws Exception {
+		if (!service.returnBook(id)) {
+			System.out.println(id + " is bad id (e.x. not to find book)");
+			return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.ok().build();
     }

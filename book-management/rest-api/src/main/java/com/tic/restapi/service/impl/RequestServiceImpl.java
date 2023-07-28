@@ -45,9 +45,9 @@ public class RequestServiceImpl implements RequestService {
 		try {
 			String status = bookCsvLogic.getAllBooks()
 					.stream()
-					.filter(b -> Objects.equals(id,b.getId()))
+					.filter(b -> Objects.equals(id, b.getId()))
 					.findFirst()
-					.orElse(new Book(){
+					.orElse(new Book() {
 						{
 							this.setStatus(STATUS.LENDERING);
 						}

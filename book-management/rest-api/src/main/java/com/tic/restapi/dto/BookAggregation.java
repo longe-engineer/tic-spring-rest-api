@@ -56,16 +56,17 @@ public class BookAggregation {
 					this.availableCount++;
 					this.ids.add(Integer.valueOf((int) book.getId()));
 				});
-		
+
 		for (Book book : books) {
 			// 名前が同じが違う、もしくは利用不可能な場合、return
-			if (!(Objects.equals(this.name, book.getName()) && book.isAvailable())) return;
+			if (!(Objects.equals(this.name, book.getName()) && book.isAvailable()))
+				return;
 			// 利用可能数の増加と、idの追加
 			this.availableCount++;
 			this.ids.add(Integer.valueOf((int) book.getId()));
 		}
 	}
-	
+
 	public BookAggregation(String name) {
 		this.name = name;
 	}

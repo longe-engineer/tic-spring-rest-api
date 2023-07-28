@@ -8,10 +8,10 @@ import com.tic.restapi.dto.BookAggregation;
 
 public interface BookService {
 
-    List<Book> getAllBook() throws IOException;
+	List<Book> getAllBook() throws IOException;
 
-    boolean addBook(Book book) throws IOException;
-    
-    List<BookAggregation> aggregate(List<Book> books);
+	boolean addBook(Book book) throws IOException;
+
+	List<BookAggregation> aggregate(List<Book> books);
 
 }
